@@ -31,3 +31,14 @@ Trade offs exemplos:
 - SQL X NoSQL
 - Armazenamento X Desempenho.
 
+---
+
+  # Programa de estoque
+  
+- Classe estoque
+
+<img width="449" height="479" alt="image" src="https://github.com/user-attachments/assets/f3a88a49-7901-4500-809c-7d401418d8c7" />
+
+- 
+
+
