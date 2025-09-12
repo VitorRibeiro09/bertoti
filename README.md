@@ -39,6 +39,13 @@ Trade offs exemplos:
 
 <img width="449" height="479" alt="image" src="https://github.com/user-attachments/assets/f3a88a49-7901-4500-809c-7d401418d8c7" />
 
-- 
+- Classe produto
 
+  <img width="351" height="390" alt="Captura de tela 2025-09-12 191514" src="https://github.com/user-attachments/assets/675143e4-44b9-4465-a058-3a24ce4ccb8b" />
 
+- Classe Teste
+
+  <img width="510" height="400" alt="Captura de tela 2025-09-12 191522" src="https://github.com/user-attachments/assets/72e235a0-e3a8-4c72-93b3-b294797e2c8f" />
+
+---
+# Atividade 7
