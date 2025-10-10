@@ -47,5 +47,10 @@ Trade offs exemplos:
 
   <img width="510" height="400" alt="Captura de tela 2025-09-12 191522" src="https://github.com/user-attachments/assets/72e235a0-e3a8-4c72-93b3-b294797e2c8f" />
 
+  ## Atividade 5
+  
+  <img width="567" height="217" alt="image" src="https://github.com/user-attachments/assets/46ee4967-77da-4152-9e2b-879117d288f3" />
+
+
 ---
 # Atividade 7
