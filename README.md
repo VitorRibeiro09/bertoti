@@ -53,4 +53,7 @@ Trade offs exemplos:
 
 
 ---
-# Atividade 7
+# Atividade 8
+## Ollama
+<img width="1176" height="621" alt="image" src="https://github.com/user-attachments/assets/e1f79052-1f7b-4c27-b8e8-473436ff82f3" />
+
