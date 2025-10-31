@@ -49,7 +49,7 @@ Um sistema simples de **gerenciamento de estoque** desenvolvido em **Java**, apl
 
 ## 🧩 Atividade 5 — Diagrama UML  
 
-<img src="https://github.com/user-attachments/assets/46ee4967-77da-4152-9e2b-879117d288f3" width="600"/>
+<img width="794" height="351" alt="image" src="https://github.com/user-attachments/assets/910c2d8f-7132-4669-9499-11c4c8d964f9" />
 
 ---
 
