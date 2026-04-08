@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Cafés</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Cadastrar Novo Café</h2>
+    <input type="text" id="coffeeId" placeholder="ID do Café (ex: 123)">
+    <input type="text" id="coffeeName" placeholder="Nome do Café (ex: Expresso)">
+    <button onclick="saveCoffee()">Salvar Café</button>
+
+    <h2>Lista de Cafés</h2>
+    <ul id="coffeeList"></ul>
+</div>
+
+<script>
+    const API_URL = '/coffees';
+
+    async function loadCoffees() {
+        try {
+            const response = await fetch(API_URL);
+
+
+            const coffees = await response.json();
+
+            const listElement = document.getElementById('coffeeList');
+
+            listElement.innerHTML = '';
+
+            coffees.forEach(coffee => {
+                const li = document.createElement('li');
+                li.textContent = `ID: ${coffee.id} | Nome: ${coffee.name}`;
+                listElement.appendChild(li);
+            });
+        } catch (error) {
+            console.error("Erro ao buscar os cafés:", error);
+        }
+    }
+
+    async function saveCoffee() {
+        const id = document.getElementById('coffeeId').value;
+        const name = document.getElementById('coffeeName').value;
+
+        if (!id || !name) {
+            alert('Por favor, preencha o ID e o Nome!');
+            return;
+        }
+
+        const newCoffee = {
+            id: id,
+            name: name
+        };
+
+        try {
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newCoffee)
+            });
+
+
+            document.getElementById('coffeeId').value = '';
+            document.getElementById('coffeeName').value = '';
+
+
+            loadCoffees();
+
+        } catch (error) {
+            console.error("Erro ao salvar o café:", error);
+        }
+    }
+
+
+    window.onload = loadCoffees;
+
+</script>
+
+</body>
+</html>
