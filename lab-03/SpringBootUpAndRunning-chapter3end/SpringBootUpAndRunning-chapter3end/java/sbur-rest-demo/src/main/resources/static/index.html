@@ -4,11 +4,151 @@
     <meta charset="UTF-8">
     <title>Meus Cafés</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .container { max-width: 600px; margin: auto; }
-        input, button { padding: 10px; margin: 5px 0; width: 100%; box-sizing: border-box; }
-        ul { list-style-type: none; padding: 0; }
-        li { background: #f4f4f4; margin: 5px 0; padding: 10px; border-radius: 5px; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap');
+
+  :root {
+      --cafe-torrado: #3b2818; /* Marrom escuro quase preto */
+      --cafe-expresso: #5c3a21; /* Marrom quente */
+      --cafe-com-leite: #c8a98b; /* Bege escuro/Caramelo */
+      --fundo-creme: #fdfaf6; /* Branco off-white */
+      --verde-folha: #4b6b35; /* Verde remetendo à plantação */
+      --vermelho-cereja: #c63939; /* Vermelho do fruto do café */
+  }
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--fundo-creme);
+      /* Um padrão sutil de pontinhos no fundo */
+      background-image: radial-gradient(var(--cafe-com-leite) 1px, transparent 1px);
+      background-size: 20px 20px;
+      color: var(--cafe-torrado);
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+  }
+
+  .container {
+      background-color: #ffffff;
+      max-width: 600px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(92, 58, 33, 0.15);
+      border-top: 6px solid var(--cafe-torrado);
+  }
+
+  h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--cafe-torrado);
+      border-bottom: 2px dashed var(--cafe-com-leite);
+      padding-bottom: 10px;
+      margin-top: 0;
+      font-style: italic;
+  }
+
+  input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #e0d5c1;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      background-color: #faf8f5;
+      transition: all 0.3s ease;
+  }
+
+  input:focus {
+      outline: none;
+      border-color: var(--cafe-expresso);
+      box-shadow: 0 0 0 3px rgba(92, 58, 33, 0.2);
+      background-color: #ffffff;
+  }
+
+  /* Botão principal (Salvar) */
+  button {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--cafe-torrado);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.1s;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+
+  button:hover {
+      background-color: var(--cafe-expresso);
+  }
+
+  button:active {
+      transform: scale(0.98);
+  }
+
+  ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  li {
+      background: #ffffff;
+      margin: 12px 0;
+      padding: 15px 20px;
+      border-radius: 8px;
+      border-left: 5px solid var(--cafe-com-leite);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 12px rgba(92, 58, 33, 0.1);
+      border-left-color: var(--cafe-expresso);
+  }
+
+  /* Container para os botões da lista */
+  .btn-group {
+      display: flex;
+      gap: 8px;
+  }
+
+  /* Estilização específica para os botões de ação */
+  .btn-group button {
+      width: auto;
+      padding: 8px 12px;
+      margin: 0;
+      font-size: 14px;
+      border-radius: 6px;
+  }
+
+  .btn-edit {
+      background-color: var(--cafe-com-leite);
+      color: var(--cafe-torrado);
+  }
+
+  .btn-edit:hover {
+      background-color: #b59373;
+  }
+
+  .btn-delete {
+      background-color: transparent;
+      color: var(--vermelho-cereja);
+      border: 1px solid var(--vermelho-cereja);
+  }
+
+  .btn-delete:hover {
+      background-color: var(--vermelho-cereja);
+      color: #ffffff;
+  }
     </style>
 </head>
 <body>
@@ -26,64 +166,83 @@
 <script>
     const API_URL = '/coffees';
 
-    async function loadCoffees() {
-        try {
-            const response = await fetch(API_URL);
+ async function loadCoffees() {
+     try {
+         const response = await fetch(API_URL);
+         const coffees = await response.json();
+         const listElement = document.getElementById('coffeeList');
+         listElement.innerHTML = '';
+
+         coffees.forEach(coffee => {
+             const li = document.createElement('li');
+            li.innerHTML = `
+    <div><strong>ID: ${coffee.id}</strong> - ${coffee.name}</div>
+    <div class="btn-group">
+        <button class="btn-edit" onclick="prepareUpdate('${coffee.id}', '${coffee.name}')">Editar</button>
+        <button class="btn-delete" onclick="deleteCoffee('${coffee.id}')">Excluir</button>
+    </div>
+`;
+             listElement.appendChild(li);
+         });
+     } catch (error) {
+         console.error("Erro ao buscar os cafés:", error);
+     }
+ }
+
+ async function saveCoffee() {
+     const id = document.getElementById('coffeeId').value;
+     const name = document.getElementById('coffeeName').value;
+
+     if (!id || !name) {
+         alert('Preencha os campos!');
+         return;
+     }
+
+     const coffeeData = { id, name };
+
+     try {
+         const isUpdate = document.getElementById('coffeeId').disabled;
+         const method = isUpdate ? 'PUT' : 'POST';
+         const url = isUpdate ? `${API_URL}/${id}` : API_URL;
+
+         await fetch(url, {
+             method: method,
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify(coffeeData)
+         });
+
+         resetForm();
+         loadCoffees();
+     } catch (error) {
+         console.error("Erro ao processar:", error);
+     }
+ }
 
 
-            const coffees = await response.json();
+ async function deleteCoffee(id) {
+     if (!confirm('Deseja excluir este café?')) return;
 
-            const listElement = document.getElementById('coffeeList');
+     try {
+         await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+         loadCoffees();
+     } catch (error) {
+         console.error("Erro ao excluir:", error);
+     }
+ }
 
-            listElement.innerHTML = '';
+ function prepareUpdate(id, name) {
+     document.getElementById('coffeeId').value = id;
+     document.getElementById('coffeeId').disabled = true; // Impede mudar o ID na edição
+     document.getElementById('coffeeName').value = name;
+ }
 
-            coffees.forEach(coffee => {
-                const li = document.createElement('li');
-                li.textContent = `ID: ${coffee.id} | Nome: ${coffee.name}`;
-                listElement.appendChild(li);
-            });
-        } catch (error) {
-            console.error("Erro ao buscar os cafés:", error);
-        }
-    }
+ function resetForm() {
+     document.getElementById('coffeeId').value = '';
+     document.getElementById('coffeeId').disabled = false;
+     document.getElementById('coffeeName').value = '';
+ }
 
-    async function saveCoffee() {
-        const id = document.getElementById('coffeeId').value;
-        const name = document.getElementById('coffeeName').value;
-
-        if (!id || !name) {
-            alert('Por favor, preencha o ID e o Nome!');
-            return;
-        }
-
-        const newCoffee = {
-            id: id,
-            name: name
-        };
-
-        try {
-            await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newCoffee)
-            });
-
-
-            document.getElementById('coffeeId').value = '';
-            document.getElementById('coffeeName').value = '';
-
-
-            loadCoffees();
-
-        } catch (error) {
-            console.error("Erro ao salvar o café:", error);
-        }
-    }
-
-
-    window.onload = loadCoffees;
+ window.onload = loadCoffees;
 
 </script>
 
