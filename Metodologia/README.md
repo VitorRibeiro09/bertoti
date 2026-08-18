@@ -2,7 +2,7 @@
 
 Tenho 19 anos, sou estudante do curso superior de tecnologia em **Banco de Dados na FATEC São José dos Campos**.
 
-### 🌟 Sobre Mim & Minha Trajetória
+### Sobre Mim & Minha Trajetória
 Quando ingressei na FATEC, vi de imediato uma grande oportunidade de expandir meus horizontes e conhecimentos. Sempre fui apaixonado pelos estudos; meu plano de carreira inicial era lecionar matemática ou seguir na área de pesquisa acadêmica, impulsionado pelo gosto em explorar a fundo novos temas.
 
 A matemática é fascinante — costumo enxergá-la como um rio de possibilidades, repleto de diferentes fluxos e profundidades. No entanto, a tecnologia me revelou um leque de infinitas oportunidades,até mesmo mais que a matemática. Desde então, venho aprendendo muito na FATEC sobre novas tecnologias, boas práticas e caminhos de especialização que certamente abrirão muitas portas. Embora ainda esteja explorando as diversas vertentes da computação, tenho forte interesse e o objetivo de atuar com **Inteligência Artificial (IA)**.
