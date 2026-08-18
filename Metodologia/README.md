@@ -42,7 +42,7 @@ Abaixo estão os projetos que desenvolvi em equipe durante minha jornada acadêm
     * Realizei a modelagem, criação e integração com o banco de dados **MySQL**, garantindo persistência e integridade dos dados de alunos, professores e entregas.
     * Implementei as regras de negócio e o fluxo de transição entre as 3 etapas de validação e o canal de troca de feedbacks entre professor e aluno.
 * **Tecnologias Utilizadas:** Java, JavaFX, Scene Builder, MySQL, Git e GitHub.
-* 🔗 **Repositório do Projeto:** [Acesse o repositório do TG Control](https://github.com/VitorRibeiro09/tg-control)
+* 🔗 **Repositório do Projeto:** [Acesse o repositório do TG Control](https://github.com/Fatec-TechForce/API-2-Semestre)
 
 ---
 
@@ -58,7 +58,7 @@ Abaixo estão os projetos que desenvolvi em equipe durante minha jornada acadêm
     * Fui responsável por conectar os *endpoints* da interface gráfica (front) com a lógica de negócios da aplicação.
     * Atuei fortemente na organização, criação e otimização das *queries* SQL no banco de dados para garantir o funcionamento correto de modificações e regras de negócio exigidas pelo cliente.
 * **Tecnologias Utilizadas:** Java, Spring Boot, MySQL, Maven, Git e GitHub.
-* 🔗 **Repositório do Projeto:** [Acesse o repositório do Bifrost Connect](https://github.com/VitorRibeiro09/bifrost-connect)
+* 🔗 **Repositório do Projeto:** [Acesse o repositório do Bifrost Connect](https://github.com/Bifrost-Connect/API3-BACK)
 
 ---
 
