@@ -9,14 +9,14 @@ A matemática é fascinante — costumo enxergá-la como um rio de possibilidade
 
 No desenvolvimento de software, meu foco principal está no ecossistema **Java** e na engenharia/administração de bancos de dados.
 
-### 📫 Contatos
+### Contatos
 * **LinkedIn:** [](https://www.linkedin.com/in/)
 * **GitHub:** [`VitorRibeiro09`](https://github.com/VitorRibeiro09)
 * **E-mail:** `contato.vitorssribeiro@gmail.com`
 
 ---
 
-## 💻 Minhas Principais Tecnologias e Ferramentas
+##  Minhas Principais Tecnologias e Ferramentas
 
 * **Linguagens & Web:** Java, JavaScript, HTML, CSS, SQL
 * **Backend & Banco de Dados:** Spring Boot, MySQL
@@ -26,11 +26,11 @@ No desenvolvimento de software, meu foco principal está no ecossistema **Java**
 
 ---
 
-## 🚀 Meus Projetos Integradores (FATEC)
+## Meus Projetos Integradores (FATEC)
 
 Abaixo estão os projetos que desenvolvi em equipe durante minha jornada acadêmica, resolvendo problemas reais por meio de soluções completas de software.
 
-### 📅 API 2º Semestre - Sistema de Controle de Trabalhos de Graduação (TG Control)
+### API 2º Semestre - Sistema de Controle de Trabalhos de Graduação (TG Control)
 **Projeto:** Aplicação Desktop para Gestão de TGs
 
 > **O Desafio:** Acompanhar e gerenciar o fluxo de entregas e revisões dos Trabalhos de Graduação de forma estruturada, permitindo um acompanhamento transparente entre orientador e estudante ao longo das etapas acadêmicas.
@@ -42,11 +42,11 @@ Abaixo estão os projetos que desenvolvi em equipe durante minha jornada acadêm
     * Realizei a modelagem, criação e integração com o banco de dados **MySQL**, garantindo persistência e integridade dos dados de alunos, professores e entregas.
     * Implementei as regras de negócio e o fluxo de transição entre as 3 etapas de validação e o canal de troca de feedbacks entre professor e aluno.
 * **Tecnologias Utilizadas:** Java, JavaFX, Scene Builder, MySQL, Git e GitHub.
-* 🔗 **Repositório do Projeto:** [Acesse o repositório do TG Control](https://github.com/Fatec-TechForce/API-2-Semestre)
+*  **Repositório do Projeto:** [Acesse o repositório do TG Control](https://github.com/Fatec-TechForce/API-2-Semestre)
 
 ---
 
-### 📅 API 3º Semestre - Sistema de Gestão de Frotas (Bifrost Connect)
+### API 3º Semestre - Sistema de Gestão de Frotas (Bifrost Connect)
 **Empresa Parceira:** IPEM
 
 > **O Desafio:** O IPEM utilizava um processo inteiramente manual (anotações em pranchetas) para controlar o uso de suas viaturas. Isso gerava dificuldades tanto no registro diário pelos técnicos quanto no trabalho do gestor, que precisava compilar os dados mensalmente para enviar ao SGI.
